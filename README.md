@@ -1,9 +1,7 @@
 # Do you have seen it?
-<code>
-<b>Obama what?</b>
-Yeah, you know, plus, plus, and plus<br/>
-HERE MAYBE EXIST PIC OF OBAMA
-</code>
+<code><h2>Obama what?</h2></code>
+<code>Yeah, you know, plus, plus, and plus</code>
+<code>HERE MAYBE EXIST PIC OF OBAMA</code>
 <br/><br/>
 This is what I named <code>NewsType</code> page.<br/>
 Of course, a news page is a <code>NewsType</code> page, so do blog or thread.
