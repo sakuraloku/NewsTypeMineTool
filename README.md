@@ -1,9 +1,11 @@
 # Do you have seen it?
-----------------------------------------------------------------------------------
+<br/><br/>
+---------------------------------------------
 <h1>Obama what?</h1>
 <p>Yeah, you know, plus, plus, and plus</p>
 <p>HERE MAYBE EXIST PIC OF OBAMA</p>
-----------------------------------------------------------------------------------
+---------------------------------------------
+<br/><br/>
 This is what I named NewsType page.<br/>
 Of course, a news page is a NewsType page, so do blog or thread.
 
@@ -14,7 +16,7 @@ It can mine information from NewsType pages in Internet.
 First of all, you should download the source file which is coded by Java.<br/>
 Then, compile it.<br/>
 At last, by type java command in cmd.exe or other just as follow:<br/><br/>
-    java program.Program TASK_NAME HOME_PAGE_URL SAMPLE_NEWS_PAGE_URL SAMPLE_NEWS_START_TEXT SAMPLE_NEWS_END_TEXT<br/>
+    <code>java program.Program TASK_NAME HOME_PAGE_URL SAMPLE_NEWS_PAGE_URL SAMPLE_NEWS_START_TEXT SAMPLE_NEWS_END_TEXT</code><br/>
     <br/>
 Get you a cup of coffee, when you back, all information you want is in your disk.
 
