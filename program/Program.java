@@ -58,13 +58,13 @@ public class Program {
 		File customFile = new File(rootDir + customFileName);
 		if(customFile.exists()){
 			String content = Reader.read(rootDir + customFileName);
-			String[] customItems = content.split("[ENTER]");
+			String[] customItems = content.split("ENTER");
 			newsPageReg = customItems[0];
 			newsPageDivId = customItems[1];
 		}else{
 			newsPageReg = HomePageMineUtil.reglizeNewsPageUrl(referNewsPageUrl);
 			newsPageDivId = NewsPageMineUtil.getDivIdByText(HttpPage.getPageSource(referNewsPageUrl), newsPageStartText, newsPageEndText);
-			Writer.write((newsPageReg+"[ENTER]"+newsPageDivId).getBytes(), rootDir + customFileName);
+			Writer.write((newsPageReg+"ENTER"+newsPageDivId).getBytes(), rootDir + customFileName);
 		}
 		
 		List<String> newsPageList = HomePageMineUtil.getNewsList(homePageUrl, newsPageReg);
