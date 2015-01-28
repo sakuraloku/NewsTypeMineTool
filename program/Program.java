@@ -73,7 +73,7 @@ public class Program {
 		
 		for(String newsPageUrl : newsPageList){
 			
-			String newsName = newsPageUrl.replace('/', '_').replace('.', '_');
+			String newsName = newsPageUrl.replace('/', '_').replace('.', '_').replace('?', '_').replace('=', '_');
 			
 			//create directory
 			File dir = new File(rootDir + newsName);
