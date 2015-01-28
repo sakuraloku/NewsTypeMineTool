@@ -1,17 +1,15 @@
 # Do you have seen it?
 <code>
----------------------------------------------
-<h1>Obama what?</h1>
-<p>Yeah, you know, plus, plus, and plus</p>
-<p>HERE MAYBE EXIST PIC OF OBAMA</p>
----------------------------------------------
+<b>Obama what?</b>
+Yeah, you know, plus, plus, and plus<br/>
+HERE MAYBE EXIST PIC OF OBAMA
 </code>
 <br/><br/>
-This is what I named NewsType page.<br/>
-Of course, a news page is a NewsType page, so do blog or thread.
+This is what I named <code>NewsType</code> page.<br/>
+Of course, a news page is a <code>NewsType</code> page, so do blog or thread.
 
 # What do NewsType Mine Tool do?
-It can mine information from NewsType pages in Internet.
+It can mine information from <code>NewsType</code> pages in Internet.
 
 # How to use it?
 First of all, you should download the source file which is coded by Java.<br/>
