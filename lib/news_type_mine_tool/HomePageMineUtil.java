@@ -39,16 +39,13 @@ public class HomePageMineUtil {
 		String regStr = "";
 		
 		int i = 0, count = data.length();
-		int charCount = 0, numCount = 0, otherCount = 0, ch ,type = TYPE_NONE;
+		int charCount = 0, numCount = 0, ch ,type = TYPE_NONE;
 		while(i < count){
 			ch = data.charAt(i++);
 			if(ch >= '0' && ch <= '9'){
 				if(type == TYPE_CHAR){
-					regStr += "[a-zA-Z]{" + charCount + "}";
+					regStr += "[a-zA-Z]+";
 					charCount = 0;
-				}else if(type == TYPE_OTHER){
-					regStr += "[^0-9a-zA-Z]{" + otherCount + "}";
-					otherCount = 0;
 				}
 				type = TYPE_NUM;
 				numCount++;
@@ -56,33 +53,30 @@ public class HomePageMineUtil {
 				if(type == TYPE_NUM){
 					regStr += "[0-9]{" + numCount + "}";
 					numCount = 0;
-				}else if(type == TYPE_OTHER){
-					regStr += "[^0-9a-zA-Z]{" + otherCount + "}";
-					otherCount = 0;
 				}
 				type = TYPE_CHAR;
 				charCount++;
 			}else{
 				if(type == TYPE_CHAR){
-					regStr += "[a-zA-Z]{" + charCount + "}";
+					regStr += "[a-zA-Z]+";
 					charCount = 0;
 				}else if(type == TYPE_NUM){
 					regStr += "[0-9]{" + numCount + "}";
 					numCount = 0;
 				}
 				type = TYPE_OTHER;
-				otherCount++;
+				if(ch == '?' || ch == '+'){
+					regStr += '\\';
+				}
+				regStr += (char)ch;
 			}
 		}
 		
 		if(charCount > 0){
-			regStr += "[a-zA-Z]{" + charCount + "}";
+			regStr += "[a-zA-Z]+";
 		}
 		if(numCount > 0){
 			regStr += "[0-9]{" + numCount + "}";
-		}
-		if(otherCount > 0){
-			regStr += "[^0-9a-zA-Z]{" + otherCount + "}";
 		}
 		
 		return regStr;
