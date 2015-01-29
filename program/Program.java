@@ -16,8 +16,6 @@ public class Program {
 	}
 	
 	public static void main(String[] args) {
-		System.setProperty("http.proxyHost","10.10.10.78");
-		System.setProperty("http.proxyPort","8080");
 		
 		String batPath = "click_to_download_image.bat";
 		String customFileName = "created_by_news_type_mine_tool";
@@ -41,8 +39,8 @@ public class Program {
 			return;
 		}
 		
-		int flagIndex = homePageUrl.indexOf(':') + 3;
-		site = homePageUrl.substring(0, homePageUrl.indexOf('/', flagIndex)) + '/';
+		int flagIndex = referNewsPageUrl.indexOf(':') + 3;
+		site = referNewsPageUrl.substring(0, referNewsPageUrl.indexOf('/', flagIndex)) + '/';
 		
 		if((!rootDir.endsWith("/")) && (!rootDir.endsWith("\\"))){
 			rootDir += "/";
@@ -75,11 +73,6 @@ public class Program {
 			
 			String newsName = newsPageUrl.replace('/', '_').replace('.', '_').replace('?', '_').replace('=', '_');
 			
-			//create directory
-			File dir = new File(rootDir + newsName);
-			if(!dir.exists()){
-				dir.mkdir();
-			}
 			
 			File titleFile = new File(rootDir + newsName + "/title.txt");
 			File textFile = new File(rootDir + newsName + "/text.txt");
@@ -92,7 +85,15 @@ public class Program {
 			String title = NewsPageMineUtil.getTitle(pageContent);
 			String text = NewsPageMineUtil.findTextByDivId(pageContent, newsPageDivId);
 			
+			if(title.length() + text.length() <= 0){
+				continue;
+			}
 			
+			//create directory
+			File dir = new File(rootDir + newsName);
+			if(!dir.exists()){
+				dir.mkdir();
+			}
 			
 			// get image
 			int imageStartIndex, imageEndIndex = 0;
